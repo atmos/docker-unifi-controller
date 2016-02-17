@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:15.04
 
 # 4.7.5-6348. So we wildcard
 ENV unifi_version=4.8.12*
@@ -10,6 +10,7 @@ RUN echo "deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti" > /etc
 RUN apt-get update -q -y && \
     apt-cache madison unifi && \
     apt-get install -q -y unifi=${unifi_version}
+RUN apt-get autoremove -q -y && mkdir -p /var/log/unifi
 
 EXPOSE 8080 8443 8880 8843
 VOLUME ["/var/lib/unifi"]

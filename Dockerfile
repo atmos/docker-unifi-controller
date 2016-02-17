@@ -14,4 +14,4 @@ RUN apt-get update -q -y && \
 EXPOSE 8080 8443 8880 8843
 VOLUME ["/var/lib/unifi"]
 # oh my is this a hack
-CMD sh -c '/usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java -Xmx256M -jar /usr/lib/unifi/lib/ace.jar start &' && tail -f /var/log/unifi/server.log
+CMD sh -c '/usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java -Xmx256M -jar /usr/lib/unifi/lib/ace.jar start &' && tail -f /var/log/unifi/server.log

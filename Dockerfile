@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 
 # 4.7.5-6348. So we wildcard
-ENV unifi_version=4.7.5*
+ENV unifi_version=4.8.12*
 
 RUN echo "deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti" > /etc/apt/sources.list.d/ubiquity.list && \
    echo "deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen" > /etc/apt/sources.list.d/10gen.list && \
